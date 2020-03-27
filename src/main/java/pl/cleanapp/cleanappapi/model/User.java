@@ -1,4 +1,4 @@
-package pl.cleanapp.cleanappapi;
+package pl.cleanapp.cleanappapi.model;
 
 public class User {
     String name;
