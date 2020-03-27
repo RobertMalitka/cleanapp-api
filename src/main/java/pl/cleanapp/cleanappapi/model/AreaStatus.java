@@ -8,10 +8,6 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 
-@Entity
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
 public enum AreaStatus {
     DELAYED,
     INACTIVE,

@@ -8,10 +8,7 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 
-@Entity
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
+
 public enum Frequency {
     ALWAYS,
     EVEN,

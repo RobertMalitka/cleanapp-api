@@ -7,10 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 
-@Entity
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
+
 public enum ActivityStatus {
     UNDONE,
     READY_TO_CHECK,
