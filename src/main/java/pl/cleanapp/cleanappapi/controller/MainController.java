@@ -11,14 +11,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-public class WeeksController {
+public class MainController {
 
     @Autowired
     WeekMapper weekMapper;
     @Autowired
     WeekService weekService;
 
-    public WeeksController(WeekMapper weekMapper, WeekService weekService){
+    public MainController(WeekMapper weekMapper, WeekService weekService){
         this.weekMapper = weekMapper;
         this.weekService = weekService;
     }
