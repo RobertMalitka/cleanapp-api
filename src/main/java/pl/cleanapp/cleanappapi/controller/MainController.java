@@ -2,10 +2,11 @@ package pl.cleanapp.cleanappapi.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import pl.cleanapp.cleanappapi.dto.WeekDto;
-import pl.cleanapp.cleanappapi.mapper.WeekMapper;
-import pl.cleanapp.cleanappapi.service.WeekService;
+import pl.cleanapp.cleanappapi.dto.AreaDto;
+import pl.cleanapp.cleanappapi.mapper.AreaMapper;
+import pl.cleanapp.cleanappapi.service.AreaService;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -14,20 +15,19 @@ import java.util.stream.Collectors;
 public class MainController {
 
     @Autowired
-    WeekMapper weekMapper;
+    AreaMapper areaMapper;
     @Autowired
-    WeekService weekService;
+    AreaService areaService;
 
-    public MainController(WeekMapper weekMapper, WeekService weekService){
-        this.weekMapper = weekMapper;
-        this.weekService = weekService;
+    public MainController(AreaService areaService) {
+        this.areaService = areaService;
     }
 
-    @GetMapping("/weeks")
-    List<WeekDto> weeks(){
-        return weekService.weeks().stream()
-                .map(weekMapper::mapToWeekDto)
+    @GetMapping("/areas/{userId}")
+    List<AreaDto> areasByUser(@PathVariable Long userId) {
+
+        return areaService.areasByUser(userId).stream()
+                .map(areaMapper::mapToAreaDto)
                 .collect(Collectors.toList());
     }
-
 }
