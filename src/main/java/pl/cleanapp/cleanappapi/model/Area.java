@@ -20,8 +20,9 @@ public class Area {
     String name;
     @OneToMany(mappedBy = "area", cascade = CascadeType.ALL)
     List<Activity> activities;
-    @OneToOne(mappedBy = "area", fetch = FetchType.LAZY)
+    @ManyToOne
     User user;
+    @Enumerated(EnumType.STRING)
     AreaStatus areaStatus;
     @ManyToOne
     Week week;

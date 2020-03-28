@@ -5,10 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="activities")
@@ -21,7 +18,9 @@ public class Activity {
     @Id
     Long Id;
     String name;
+    @Enumerated(EnumType.STRING)
     ActivityStatus activityStatus;
+    @Enumerated(EnumType.STRING)
     Frequency frequency;
     @ManyToOne
     Area area;
