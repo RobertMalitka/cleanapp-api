@@ -1,6 +1,6 @@
 insert into users values(1, 'Jan');
-insert into users values(2, 'Mateusz');
-insert into users values(3, 'Robert');
+insert into users values(2, 'Robert');
+insert into users values(3, 'Mateusz');
 
 insert into weeks values(1, 'CW12');
 insert into weeks values(2, 'CW15');
