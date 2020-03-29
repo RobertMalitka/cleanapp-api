@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class Activity {
 
     @Id
-    Long Id;
+    Long id;
     String name;
     @Enumerated(EnumType.STRING)
     ActivityStatus activityStatus;

@@ -17,7 +17,7 @@ import java.util.Set;
 public class Week {
     @Id
     Long id;
-    String name;
+    public String name;
     @OneToMany(mappedBy = "week", cascade = CascadeType.ALL)
     Set<Area> areas;
 }

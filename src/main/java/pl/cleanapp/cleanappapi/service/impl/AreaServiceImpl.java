@@ -2,7 +2,9 @@ package pl.cleanapp.cleanappapi.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.cleanapp.cleanappapi.model.Activity;
 import pl.cleanapp.cleanappapi.model.Area;
+import pl.cleanapp.cleanappapi.model.AreaStatus;
 import pl.cleanapp.cleanappapi.repository.AreaRepository;
 import pl.cleanapp.cleanappapi.service.AreaService;
 
@@ -18,4 +20,9 @@ public class AreaServiceImpl implements AreaService {
     public List<Area> areasByUser(Long userId) {
         return areaRepository.findAllByUserId(userId);
     }
+
+//    @Override
+////    public void setAreaStatus(AreaStatus areaStatus) {
+////        areaRepository.setAreaStatus(areaStatus);
+////    }
 }
