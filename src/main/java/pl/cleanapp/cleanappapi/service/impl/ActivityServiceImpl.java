@@ -34,15 +34,17 @@ public class ActivityServiceImpl implements ActivityService {
 
     @Override
     public boolean checkIfActivityIsNeeded(Week week, Frequency frequency) {
-        if (frequency.equals(Frequency.ALWAYS)) {
+        if (frequency==Frequency.ALWAYS){
             return true;
         }
         boolean isWeekEven = (Integer.parseInt(week.name.substring(2)) % 2 == 0);
-        if ((isWeekEven && frequency.equals(Frequency.EVEN)) || !isWeekEven && frequency.equals(Frequency.ODD))
+        if ((isWeekEven && (frequency == Frequency.EVEN)) || (!isWeekEven && (frequency == Frequency.ODD))) {
             return true;
-        return false;
+        }
+        else {
+            return false;
+        }
     }
-
 //    @Override
 //    public void setActivityStatus(ActivityStatus activityStatus) {
 //        activityRepository.setActivityStatus(activityStatus);
