@@ -6,4 +6,5 @@ import pl.cleanapp.cleanappapi.model.Week;
 import java.util.List;
 
 public interface WeekService {
+    int getCurrentWeek();
 }
