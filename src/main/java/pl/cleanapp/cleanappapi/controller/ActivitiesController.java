@@ -24,6 +24,7 @@ public class ActivitiesController {
     @GetMapping("/activities/{areaId}")
     List<ActivityDto> activitiesByArea(@PathVariable Long areaId) {
         return activityService.getActivitiesByAreaId(areaId).stream()
+                .filter(act -> activityService.checkIfActivityIsNeeded(areaService.getWeekByAreaId, act.getFrequency()))
                 .map(activityMapper::mapToActivityDto)
                 .collect(Collectors.toList());
     }
