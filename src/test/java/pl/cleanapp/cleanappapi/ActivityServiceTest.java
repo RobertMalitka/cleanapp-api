@@ -21,10 +21,10 @@ import static org.mockito.Mockito.mock;
 
 public class ActivityServiceTest {
 
-@Autowired
-        ActivityRepository activityRepository;
+    @Autowired
+    ActivityRepository activityRepository;
 
-    ActivityServiceImpl activityService =new ActivityServiceImpl(activityRepository);
+    ActivityServiceImpl activityService = new ActivityServiceImpl(activityRepository);
 
     @Test
     void checkIfActivityIsNeededTest() {

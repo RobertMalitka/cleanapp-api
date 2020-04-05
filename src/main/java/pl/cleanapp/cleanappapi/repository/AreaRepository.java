@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import pl.cleanapp.cleanappapi.model.Activity;
 import pl.cleanapp.cleanappapi.model.Area;
 import pl.cleanapp.cleanappapi.model.AreaStatus;
+import pl.cleanapp.cleanappapi.model.Week;
 
 import java.util.List;
 
