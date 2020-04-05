@@ -32,7 +32,7 @@ public class ActivitiesController {
                 .collect(Collectors.toList());
     }
 
-    @PutMapping("/activities/{activityId}")
+    @GetMapping("/activitiesIncr/{activityId}")
     ActivityStatus incrementStatusByActivityId(@PathVariable Long activityId) {
         ActivityStatus as = activityService.incrementStatusByActivityId(activityId);
         Activity activity = activityService.getActivityById(activityId);
