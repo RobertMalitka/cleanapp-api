@@ -10,4 +10,7 @@ public interface ActivityService {
 //    void setActivityStatus(ActivityStatus activityStatus);
 public List<Activity> getActivitiesByAreaId(Long areaId);
 
+    ActivityStatus incrementStatusByActivityId(Long activityId);
+    Activity addActivity(Activity activity);
+    Activity getActivityById(Long activityId);
 }

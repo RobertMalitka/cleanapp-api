@@ -2,6 +2,7 @@ package pl.cleanapp.cleanappapi.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.cleanapp.cleanappapi.model.AreaStatus;
 import pl.cleanapp.cleanappapi.model.Week;
 import pl.cleanapp.cleanappapi.repository.WeekRepository;
 import pl.cleanapp.cleanappapi.service.WeekService;
@@ -18,8 +19,4 @@ public class WeekServiceImpl implements WeekService {
         this.weekRepository = weekRepository;
     }
 
-    @Override
-    public List<Week> weeks() {
-        return weekRepository.findAll();
-    }
 }
