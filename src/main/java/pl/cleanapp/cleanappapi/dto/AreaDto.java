@@ -10,5 +10,7 @@ public class AreaDto {
     Long id;
     String areaStatus;
     String name;
+    String user;
+    String week;
 
 }
