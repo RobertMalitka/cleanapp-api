@@ -9,6 +9,7 @@ import pl.cleanapp.cleanappapi.model.ActivityStatus;
 import pl.cleanapp.cleanappapi.service.ActivityService;
 import pl.cleanapp.cleanappapi.service.AreaService;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,6 +30,7 @@ public class ActivitiesController {
         return activityService.getActivitiesByAreaId(areaId).stream()
                 .filter(act -> activityService.checkIfActivityIsNeeded(areaService.getWeekByAreaId(areaId), act.getFrequency()))
                 .map(activityMapper::mapToActivityDto)
+                .sorted(Comparator.comparingLong(ActivityDto::getId))
                 .collect(Collectors.toList());
     }
 
