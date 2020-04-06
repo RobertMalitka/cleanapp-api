@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import pl.cleanapp.cleanappapi.model.*;
 import pl.cleanapp.cleanappapi.repository.ActivityRepository;
 import pl.cleanapp.cleanappapi.service.ActivityService;
+import pl.cleanapp.cleanappapi.service.AreaService;
 
 
 import java.util.List;
@@ -17,12 +18,12 @@ public class ActivityServiceImpl implements ActivityService {
     @Autowired
     ActivityRepository activityRepository;
 
+    @Autowired
+    AreaService areaService;
+
     public ActivityServiceImpl(ActivityRepository activityRepository){
         this.activityRepository = activityRepository;
     }
-
-
-
 
     @Override
     public ActivityStatus getActivityStatusById(Long activityId) {
@@ -49,7 +50,9 @@ public class ActivityServiceImpl implements ActivityService {
 
     @Override
     public Activity addActivity(Activity activity) {
-        return activityRepository.save(activity);
+        Activity savedActivity=activityRepository.save(activity);
+        areaService.changeAreaStatus(savedActivity.getArea().getId());
+        return savedActivity;
     }
 
     @Override

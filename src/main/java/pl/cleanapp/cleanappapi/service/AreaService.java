@@ -13,4 +13,5 @@ public interface AreaService {
     List<Area> areasByUser(Long userId);
  //   void setAreaStatus(AreaStatus areaStatus);
     Week getWeekByAreaId(Long areaId);
+    Area changeAreaStatus(Long areaId);
 }

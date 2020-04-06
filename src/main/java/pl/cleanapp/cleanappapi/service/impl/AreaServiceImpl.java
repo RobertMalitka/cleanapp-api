@@ -2,8 +2,7 @@ package pl.cleanapp.cleanappapi.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.cleanapp.cleanappapi.model.Area;
-import pl.cleanapp.cleanappapi.model.Week;
+import pl.cleanapp.cleanappapi.model.*;
 import pl.cleanapp.cleanappapi.repository.AreaRepository;
 import pl.cleanapp.cleanappapi.service.AreaService;
 
@@ -25,8 +24,15 @@ public class AreaServiceImpl implements AreaService {
         return areaRepository.findById(areaId).get().getWeek();
     }
 
-//    @Override
-////    public void setAreaStatus(AreaStatus areaStatus) {
-////        areaRepository.setAreaStatus(areaStatus);
-////    }
+    @Override
+    public Area changeAreaStatus(Long areaId) {
+        Area area = areaRepository.findById(areaId).get();
+        for (Activity activity : area.getActivities()) {
+            if (activity.getActivityStatus() != ActivityStatus.CHECKED) {
+                return area;
+            }
+        }
+        area.setAreaStatus(AreaStatus.DONE);
+        return areaRepository.save(area);
+    }
 }
